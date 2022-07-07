@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
+  - docker build -t trav_env_var --build-arg DOCKER_USERNAME=${DOCKER_USERNAME} .
   - docker tag simple-node iniakponode/trav_env_var:latest
 
 after_success:
